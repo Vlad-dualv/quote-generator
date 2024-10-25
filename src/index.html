@@ -4,11 +4,36 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quote Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Quote of the day</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <main></main>
+    <main>
+      <div class="container">
+        <h1>Quote of the day</h1>
+        <p class="quote">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et doloremque
+          qui error aperiam magnam autem, aspernatur dolore accusamus.
+        </p>
+        <p class="author">Author</p>
+        <div class="button-container">
+          <button class="new-quote-btn" type="button">New Quote</button
+          ><button class="post-btn" type="button">
+            Post on
+            <svg class="icon icon-x" width="15" height="15" aria-label="x icon">
+              <use href="./img/sprite.svg#icon-x"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </main>
 
     <!-- <svg class="icon icon-x"><use xlink:href="#icon-x"></use></svg> -->
     <script type="module" src="./main.js"></script>
