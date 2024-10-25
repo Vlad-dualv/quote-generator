@@ -6,7 +6,7 @@ body {
   background-color: rgb(172, 161, 221);
   color: black;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.03em;
@@ -49,15 +49,49 @@ img {
 
 h1 {
   font-size: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  position: relative;
 }
 
-.quote {
+h1::after {
+  position: absolute;
+  content: '';
+  background-color: rgb(172, 161, 221);
+  width: 80px;
+  height: 3px;
+  border-radius: 3px;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+blockquote {
   margin-bottom: 10px;
+  min-height: 100px;
+}
+
+blockquote::before,
+blockquote::after {
+  content: '"';
 }
 
 .author {
+  font-style: italic;
   text-align: right;
+  position: relative;
+  font-size: 14px;
+}
+
+.author::before {
+  position: absolute;
+  content: '';
+  background-color: rgb(172, 161, 221);
+  width: 12px;
+  height: 2px;
+  border-radius: 3px;
+  left: 20%;
+  bottom: 6px;
+  transform: translateY(-50%);
 }
 
 .button-container {
@@ -68,14 +102,117 @@ h1 {
 }
 
 button {
+  cursor: pointer;
+  min-width: 100px;
+  min-height: 30px;
   padding: 10px;
   font-size: 12px;
   border-radius: 30px;
   outline: none;
   background-color: aliceblue;
   border: 1px solid rgb(109, 89, 220);
+  transition: background-color 200ms ease-in-out;
+}
+
+button:active {
+  background-color: rgb(172, 161, 221);
+}
+
+.post-btn {
+  display: flex;
+  align-self: baseline;
+  justify-content: center;
+  gap: 5px;
 }
 
 /*-----------------------------------------------TABLET----------------------------*/
 
+@media screen and (min-width: 768px) {
+  .container {
+    margin-top: 200px;
+  }
+
+  h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+
+  blockquote {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+
+  .author {
+    font-size: 16px;
+  }
+
+  .author::before {
+    left: 60%;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  .button-container {
+    margin-top: 50px;
+    gap: 40px;
+  }
+}
+
 /*-----------------------------------------------DESKTOP----------------------------*/
+
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 50%;
+  }
+
+  h1 {
+    font-size: 60px;
+    margin-bottom: 60px;
+  }
+
+  h1::after {
+    width: 120px;
+  }
+
+  blockquote {
+    font-size: 28px;
+  }
+
+  .author {
+    font-size: 20px;
+  }
+
+  .author::before {
+    left: 70%;
+  }
+
+  .button-container {
+    gap: 60px;
+  }
+
+  button {
+    min-width: 150px;
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  button:hover,
+  button:focus {
+    background-color: rgb(172, 161, 221);
+  }
+
+  button:active {
+    background-color: rgb(155, 139, 227);
+  }
+
+  .post-btn {
+    gap: 10px;
+  }
+
+  .icon {
+    width: 1.2em;
+    height: 1.2em;
+  }
+}
