@@ -67,7 +67,6 @@ h1::after {
 
 blockquote {
   margin-bottom: 10px;
-  min-height: 100px;
 }
 
 blockquote::before,
@@ -78,20 +77,11 @@ blockquote::after {
 .author {
   font-style: italic;
   text-align: right;
-  position: relative;
   font-size: 14px;
 }
 
 .author::before {
-  position: absolute;
-  content: '';
-  background-color: rgb(172, 161, 221);
-  width: 12px;
-  height: 2px;
-  border-radius: 3px;
-  left: 20%;
-  bottom: 6px;
-  transform: translateY(-50%);
+  content: '- ';
 }
 
 .button-container {
@@ -139,15 +129,14 @@ button:active {
 
   blockquote {
     font-size: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
   .author {
+    text-align: center;
+    right: 10px;
     font-size: 16px;
-  }
-
-  .author::before {
-    left: 60%;
+    transform: translateX(30%);
   }
 
   button {
@@ -182,10 +171,6 @@ button:active {
 
   .author {
     font-size: 20px;
-  }
-
-  .author::before {
-    left: 70%;
   }
 
   .button-container {
