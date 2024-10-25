@@ -26,6 +26,16 @@ function newQuote() {
 
 /*--------------------------------------------*/
 
-function postQuote() {}
+function postQuote() {
+  window.open(
+    'https://twitter.com/intent/tweet?text=' +
+      quote.innerHTML +
+      'by' +
+      author.innerHTML,
+    'X Window',
+    'width=600, height=300'
+  );
+}
 
 newQuoteBtn.addEventListener('click', newQuote);
+postBtn.addEventListener('click', postQuote);
