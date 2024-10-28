@@ -7,14 +7,21 @@ const postBtn = document.querySelector('.post-btn');
 
 /*------------------API--------------------*/
 
+const ApiKey = 'adtI3iEzrICUmeauFlmvag==C0c4O4zjLM82nYsK';
+
 const myAxios = axios.create({
-  baseURL: 'https://api.quotable.io',
+  baseURL: 'https://api.api-ninjas.com/v1/quotes/',
 });
 
 async function getQuote() {
-  const response = await myAxios.get('/quotes/random');
+  const headers = {
+    headers: {
+      'X-Api-Key': ApiKey,
+    },
+  };
+  const response = await myAxios.get('', headers);
   const data = await response.data;
-  quote.innerHTML = data[0].content;
+  quote.innerHTML = data[0].quote;
   author.innerHTML = data[0].author;
 }
 
@@ -30,7 +37,7 @@ function postQuote() {
   window.open(
     'https://twitter.com/intent/tweet?text=' +
       quote.innerHTML +
-      'by' +
+      'by ' +
       author.innerHTML,
     'X Window',
     'width=600, height=300'
