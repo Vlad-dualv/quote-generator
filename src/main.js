@@ -35,10 +35,7 @@ function newQuote() {
 
 function postQuote() {
   window.open(
-    'https://twitter.com/intent/tweet?text=' +
-      quote.innerHTML +
-      ' by ' +
-      author.innerHTML,
+    `https://twitter.com/intent/tweet?text=${quote.innerHTML} by ${author.innerHTML}`,
     'X Window',
     'width=600, height=300'
   );
