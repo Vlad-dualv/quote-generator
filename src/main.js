@@ -37,7 +37,7 @@ function postQuote() {
   window.open(
     'https://twitter.com/intent/tweet?text=' +
       quote.innerHTML +
-      'by ' +
+      ' by ' +
       author.innerHTML,
     'X Window',
     'width=600, height=300'
